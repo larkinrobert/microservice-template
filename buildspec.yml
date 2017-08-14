@@ -1,0 +1,30 @@
+
+version: 0.2
+
+#$CODEBUILD_SRC_DIR is is a given env var
+
+env:
+  variables:
+    customenvkey: "mycustomenvvalue"
+phases:
+  install:
+    commands:
+      - echo "install command..."
+  pre_build:
+    commands:
+      - mkdir -p ./src
+      - mkdir -p ./deploy
+  build:
+    commands:
+      - echo "build command..."
+  post_build:
+    commands:
+      - zip -r src.zip ./src
+      - zip -r deploy.zip ./deploy
+      - zip -r package.zip . --exclude \*.git\* --exclude ./src --exclude ./deploy --exclude src.zip --exclude deploy.zip
+artifacts:
+  files:
+    - src.zip
+    - deploy.zip
+    - package.zip
+    - ./deploy/transforms/*
