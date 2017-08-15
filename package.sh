@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#this file is to work around codebuild shell limitations.
+
 echo $(pwd)
 echo $(ls)
 [[ -d ./src ]] || echo "Missing src dir"
