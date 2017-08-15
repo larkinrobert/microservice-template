@@ -9,5 +9,6 @@ echo $(ls)
 [[ -d ./package ]] || echo "Missing package dir"
 
 zip -r ./package/src.zip ./src/*
+echo $(du -sh ./package/src.zip)
 
 
