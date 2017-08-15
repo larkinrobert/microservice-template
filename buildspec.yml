@@ -12,19 +12,16 @@ phases:
       - echo "install command..."
   pre_build:
     commands:
-      - mkdir -p ./src
-      - mkdir -p ./deploy
+      - [[ -d ./src ]] || exit 1
+      - [[ -d ./deploy ]] || exit 1
+      - [[ -d ./package ]] || exit 1
   build:
     commands:
       - echo "build command..."
   post_build:
     commands:
-      - zip -r src.zip ./src
-      - zip -r deploy.zip ./deploy
-      - zip -r package.zip . --exclude \*.git\* --exclude ./src --exclude ./deploy --exclude src.zip --exclude deploy.zip
+      - zip -r src.zip ./src/*
 artifacts:
   files:
-    - src.zip
-    - deploy.zip
-    - package.zip
-    - ./deploy/transforms/*
+    - ./package/src.zip
+    - ./deploy/*
