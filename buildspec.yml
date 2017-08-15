@@ -22,6 +22,5 @@ phases:
       - ./package.sh
 artifacts:
   files:
-    - ./package/src.zip
+    - ./package/*
     - ./deploy/**/*
-  discard-paths: yes
