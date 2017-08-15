@@ -1,4 +1,5 @@
-/bin/bash
+#!/bin/bash
+
 echo $(pwd)
 echo $(ls)
 [[ -d ./src ]] || echo "Missing src dir"
