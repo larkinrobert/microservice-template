@@ -12,7 +12,7 @@ phases:
       - echo "install command..."
   pre_build:
     commands:
-      - echo $(which /bin/bash)
+      - cat /codebuild/output/tmp/script.sh
       - "[[ -d ./src ]] || exit 1"
       - "[[ -d ./deploy ]] || exit 1"
       - "[[ -d ./package ]] || exit 1"
