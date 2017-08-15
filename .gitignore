@@ -24,5 +24,3 @@ node_modules
 # Webstorm Project
 .idea/
 
-#Packaged files, artifacts
-package/
