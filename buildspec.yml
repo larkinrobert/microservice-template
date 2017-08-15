@@ -14,7 +14,7 @@ phases:
     commands:
       - echo "pre-build commands..."
       - "[[ -d ./src ]] || echo 'Missing src dir'"
-      - "[[ -d ./deploy ]] || echo 'Missing deploy dir'"
+      - "[[ -d ./awsoptions ]] || echo 'Missing awsoptions dir'"
       - "[[ -d ./package ]] || echo 'Missing package dir'"
   build:
     commands:
@@ -26,4 +26,4 @@ phases:
 artifacts:
   files:
     - ./package/*
-    - ./deploy/**/*
+    - ./awsoptions/**/*
