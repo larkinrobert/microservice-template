@@ -13,9 +13,9 @@ phases:
   pre_build:
     commands:
       - echo "pre-build commands..."
-      - [[ -d ./src ]] || echo "Missing src dir"
-      - [[ -d ./deploy ]] || echo "Missing deploy dir"
-      - [[ -d ./package ]] || echo "Missing package dir"
+      - "[[ -d ./src ]] || echo 'Missing src dir'"
+      - "[[ -d ./deploy ]] || echo 'Missing deploy dir'"
+      - "[[ -d ./package ]] || echo 'Missing package dir'"
   build:
     commands:
       - echo "build command..."
