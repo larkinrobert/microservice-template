@@ -23,4 +23,4 @@ phases:
 artifacts:
   files:
     - ./package/src.zip
-    - ./deploy/*
+    - ./deploy/**/*
