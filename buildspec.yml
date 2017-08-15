@@ -12,8 +12,10 @@ phases:
       - echo "install command..."
   pre_build:
     commands:
-      - echo $SHELL
-      - echo $(env)
+      - echo $(which /bin/bash)
+      - "[[ -d ./src ]] || exit 1"
+      - "[[ -d ./deploy ]] || exit 1"
+      - "[[ -d ./package ]] || exit 1"
   build:
     commands:
       - echo "build command..."
