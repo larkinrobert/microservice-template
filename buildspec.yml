@@ -13,13 +13,16 @@ phases:
   pre_build:
     commands:
       - echo "pre-build commands..."
-      - chmod a+x package.sh
+      - [[ -d ./src ]] || echo "Missing src dir"
+      - [[ -d ./deploy ]] || echo "Missing deploy dir"
+      - [[ -d ./package ]] || echo "Missing package dir"
   build:
     commands:
       - echo "build command..."
   post_build:
     commands:
-      - ./package.sh
+      - zip -r ./package/src.zip ./src/*
+      - echo $(du -sh ./package/src.zip)
 artifacts:
   files:
     - ./package/*
