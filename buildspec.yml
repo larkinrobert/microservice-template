@@ -12,16 +12,13 @@ phases:
       - echo "install command..."
   pre_build:
     commands:
-      - cat /codebuild/output/tmp/script.sh
-      - "[[ -d ./src ]] || exit 1"
-      - "[[ -d ./deploy ]] || exit 1"
-      - "[[ -d ./package ]] || exit 1"
+      - echo "pre-build commands..."
   build:
     commands:
       - echo "build command..."
   post_build:
     commands:
-      - zip -r ./package/src.zip ./src/*
+      - ./package.sh
 artifacts:
   files:
     - ./package/src.zip
