@@ -24,3 +24,4 @@ artifacts:
   files:
     - ./package/src.zip
     - ./deploy/**/*
+  discard-paths: yes
